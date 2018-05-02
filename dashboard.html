@@ -1,0 +1,39 @@
+﻿{%  extends "header.html" %}
+{% block body %}
+  <!-- Tab panes -->
+<div class="row">
+<div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+
+<ul id="tabs-swipe-demo" class="tabs">
+    <li class="tab"><a href="#swipe-1">CS教程</a></li>
+    <li class="tab"><a class="active" href="#swipe-2">自由随笔</a></li>
+    <li class="tab"><a class="active" href="#swipe-3">瞬间记忆</a></li>
+</ul>
+<div id="swipe-1" class="">
+  <ul class="collapsible">
+	{% for ky in TOPIC_DICT%}
+		<li><div class="collapsible-header"><i class="material-icons">import_contacts</i>{{ky}}</div>
+		{%for t in TOPIC_DICT[ky] %}
+		<div class="collapsible-body"><span><a href="{{t[1]}}">{{t[0]}}</a></span></div>
+		{% endfor %}
+	{% endfor %}
+	</li>
+   </ul>
+</div>
+<div id="swipe-2" class="">
+自由随笔......
+</div>
+<div id="swipe-3" class="">
+瞬间记忆......
+</div>
+
+
+</div>
+      <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+<p class="flow-text">I am Flow Text</p>
+   
+</div>
+
+</div>
+
+{% endblock %}
